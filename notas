@@ -1,0 +1,17 @@
+n=int(input(""))
+alumnos=[]
+notas=[]
+suma=0
+count=0
+for i in range (n):
+    a=input("")
+    s1,s2=a.split(",")
+    alumnos.append(s1)
+    notas.append(float(s2))
+    if float(s2)>=10.5:
+        suma+=float(s2)
+        count+=1
+promedio=round(suma/count,2)
+for a,b in zip(alumnos,notas):
+    if b<10.5:
+        print(str(a)+","+str(promedio-b))
