@@ -2,7 +2,7 @@ import pygame
 from cell import Cell
 import random
 import sys
-
+import os
 
 def get_num_row(number):
     start_s = str(number)
@@ -269,7 +269,13 @@ blue = (0, 0, 255)
 bright_green = (0, 255, 0)
 green = (0, 200, 0)
 
-pygame.mixer.music.load('musica.mp3')  #Valeria
+if os.path.exists('musica.mp3'):
+    pygame.mixer.music.load('musica.mp3')  # Valeria
+    pygame.mixer.music.set_volume(0.10)  # Set volume to 25%
+else:
+    print("Warning: 'musica.mp3' not found. Background music will not play.")
+
+pygame.mixer.music.play()
 
 clock: None = pygame.time.Clock()
 done = False
@@ -291,7 +297,6 @@ ladder_se = get_ladders_cells()
 snakes_se = get_snakes_cells(ladder_se)
 #snakes_se = [[44, 3], [53, 34], [63, 37], [68, 27], [75, 43], [96, 83]]
 
-pygame.mixer.music.play()
 while not done:
     fwd = True
     cur_x, cur_y = first_cell_x, first_cell_y
