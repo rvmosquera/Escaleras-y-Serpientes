@@ -13,18 +13,13 @@ Sigue estos pasos para instalar y ejecutar el proyecto:
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/Escaleras-y-Serpientes.git
+    git clone https://github.com/rvmosquera/Escaleras-y-Serpientes.git
     cd Escaleras-y-Serpientes
     ```
 
-2. Instala el paquete `uv`:
+2. Ejecuta el programa:
     ```bash
-    pip install uv
-    ```
-
-3. Ejecuta el programa:
-    ```bash
-    python main.py
+    uv run main.py
     ```
 
 ## Pruebas
